@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AMPS</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="projects">Projects</string>
+    <string name="action_settings">Toolbar</string>
+    <string name="action_overflow">Menu</string>
+    <string name="home">Home</string>
+    <string name="admin">Admin</string>
+    <string name="profile">Profile</string>
+    <string name="theme">Theme</string>
+    <string name="help">Help</string>
+    <string name="logout">Logout</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="welcome">Welcome to AMPS!</string>
+    <string name="news">NEWS</string>
+    <string name="headline1">Headline1 \nContent of headline 1</string>
+    <string name="title_activity_profile_account">ProfileAccountActivity</string>
+    <string name="title_activity_main_tab_menu">MainTabMenu</string>
+    <string name="title_activity_profile_tab_menu">MainActivity</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+	<string name="username">Username</string>
+	<string name="fullname">Full Name</string>
+	<string name="contactno">Contact No.</string>
+	<string name="email">Email</string>
+	<string name="address">Address</string>
+</resources>
