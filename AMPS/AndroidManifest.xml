@@ -42,6 +42,14 @@
             android:name="com.example.amps.ProfileActivity"
             android:label="@string/title_activity_profile" >
         </activity>
+        <activity
+            android:name="com.example.amps.ProfilePasswordActivity"
+            android:label="@string/title_activity_profile_password" >
+        </activity>
+        <activity
+            android:name="com.example.amps.ProfileSettingsActivity"
+            android:label="@string/title_activity_profile_settings" >
+        </activity>
     </application>
 
 </manifest>

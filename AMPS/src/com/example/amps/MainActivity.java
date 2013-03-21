@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.*;
-import android.widget.*;
 
 public class MainActivity extends Activity {
 	Intent intent;

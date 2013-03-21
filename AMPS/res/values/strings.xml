@@ -20,9 +20,35 @@
     <string name="title_activity_main_tab_menu">MainTabMenu</string>
     <string name="title_activity_profile_tab_menu">MainActivity</string>
     <string name="title_activity_profile">ProfileActivity</string>
-	<string name="username">Username</string>
-	<string name="fullname">Full Name</string>
-	<string name="contactno">Contact No.</string>
-	<string name="email">Email</string>
-	<string name="address">Address</string>
+    <string name="username">Username</string>
+    <string name="fullname">Full Name</string>
+    <string name="contactno">Contact No.</string>
+    <string name="email">Email</string>
+    <string name="address">Address</string>
+    <string name="position">Position</string>
+    <string name="birthdate">Birth Date</string>
+    <string name="update">Update</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_activity_profile_password">ProfilePasswordActivity</string>
+    <string name="currentpassword">Current Password</string>
+    <string name="newpassword">New Password</string>
+    <string name="verifypassword">Verify Password</string>
+    <string name="title_activity_profile_settings">ProfileSettingsActivity</string>
+    <string name="noofprojectstodisplay">No. of Projects to display: </string>
+    <string name="noofassetstodisplay">No. of Assets to display: </string>
+    <string name="autopreviewassets">Automatically Preview Assets</string>
+    <string name="requirechangepassword">Require change of password every 72 days</string>
+    <string-array name="number1to10">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
 </resources>
