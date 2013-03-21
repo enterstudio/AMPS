@@ -6,8 +6,7 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class ProfileAccountActivity extends Activity {
-	Intent intent;
+public class ProfileAccountActivity extends BaseActivity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +21,18 @@ public class ProfileAccountActivity extends Activity {
 		return true;
 	}
 	
-	@Override	
+	 public boolean onOptionsItemSelected(MenuItem item) {
+		 return super.onOptionsItemSelected(item);
+	 }
+	
+	/*@Override	
     public boolean onOptionsItemSelected(MenuItem item) {
+		Intent intent;
 		switch (item.getItemId()) {
     		case R.id.project1:
     		case R.id.project2:
     		case R.id.home:
-    			intent = new Intent(this, HomeActivity.class);
+    			intent = new Intent(this, MainActivity.class);
     			startActivity(intent);
     			finish();
     			return true;
@@ -48,5 +52,5 @@ public class ProfileAccountActivity extends Activity {
     		default:
     			return false;
 		}
-    }
+    }*/
 }

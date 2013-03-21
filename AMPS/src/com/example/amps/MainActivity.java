@@ -5,8 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.*;
 
-public class MainActivity extends Activity {
-	Intent intent;
+public class MainActivity extends BaseActivity {
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +21,18 @@ public class MainActivity extends Activity {
         return true;
     }
     
-    @Override	
+	 public boolean onOptionsItemSelected(MenuItem item) {
+		 return super.onOptionsItemSelected(item);
+	 }
+	
+	/*@Override	
     public boolean onOptionsItemSelected(MenuItem item) {
+		Intent intent;
 		switch (item.getItemId()) {
     		case R.id.project1:
     		case R.id.project2:
     		case R.id.home:
-    			intent = new Intent(this, HomeActivity.class);
+    			intent = new Intent(this, MainActivity.class);
     			startActivity(intent);
     			finish();
     			return true;
@@ -48,9 +52,10 @@ public class MainActivity extends Activity {
     		default:
     			return false;
 		}
-    }
+    }*/
     
     public void onClick(View view) {
+    	Intent intent;
     	try {
     		switch (view.getId()) {
 	    		case R.id.login:
