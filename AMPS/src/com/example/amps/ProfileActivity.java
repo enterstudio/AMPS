@@ -3,20 +3,17 @@ package com.example.amps;
 import android.os.Bundle;
 import android.app.ActionBar;
 import android.app.ActionBar.*;
-import android.app.Activity;
-import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RelativeLayout;
 
 public class ProfileActivity extends BaseActivity implements TabListener {
-	RelativeLayout rl;
-	FragmentTransaction fragMentTra = null;
-	ProfileAccountFragment fram1;
-	ProfilePasswordFragment fram2;
-	ProfileSettingsFragment fram3;
+	RelativeLayout r;
+	FragmentTransaction fragmentTra = null;
+	ProfileAccountFragment frag1;
+	ProfilePasswordFragment frag2;
+	ProfileSettingsFragment frag3;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +21,8 @@ public class ProfileActivity extends BaseActivity implements TabListener {
 		setContentView(R.layout.activity_profile);
 
 		try {
-			rl = (RelativeLayout) findViewById(R.id.activity_profile);
-			fragMentTra = getFragmentManager().beginTransaction();
+			r = (RelativeLayout) findViewById(R.id.activity_profile);
+			fragmentTra = getFragmentManager().beginTransaction();
 			ActionBar bar = getActionBar();
 			bar.addTab(bar.newTab().setText("Account").setTabListener(this));
 			bar.addTab(bar.newTab().setText("Password").setTabListener(this));
@@ -66,34 +63,34 @@ public class ProfileActivity extends BaseActivity implements TabListener {
 	public void onTabSelected(Tab tab, FragmentTransaction arg1) {
 		if (tab.getText().equals("Account")) {
 			try {
-				rl.removeAllViews();
+				r.removeAllViews();
 			} catch (Exception e) {
 			}
-			fram1 = new ProfileAccountFragment();
-			fragMentTra.addToBackStack(null);
-			fragMentTra = getFragmentManager().beginTransaction();
-			fragMentTra.add(rl.getId(), fram1);
-			fragMentTra.commit();
+			frag1 = new ProfileAccountFragment();
+			fragmentTra.addToBackStack(null);
+			fragmentTra = getFragmentManager().beginTransaction();
+			fragmentTra.add(r.getId(), frag1);
+			fragmentTra.commit();
 		} else if (tab.getText().equals("Password")) {
 			try {
-				rl.removeAllViews();
+				r.removeAllViews();
 			} catch (Exception e) {
 			}
-			fram2 = new ProfilePasswordFragment();
-			fragMentTra.addToBackStack(null);
-			fragMentTra = getFragmentManager().beginTransaction();
-			fragMentTra.add(rl.getId(), fram2);
-			fragMentTra.commit();
+			frag2 = new ProfilePasswordFragment();
+			fragmentTra.addToBackStack(null);
+			fragmentTra = getFragmentManager().beginTransaction();
+			fragmentTra.add(r.getId(), frag2);
+			fragmentTra.commit();
 		} else if (tab.getText().equals("Settings")) {
 			try {
-				rl.removeAllViews();
+				r.removeAllViews();
 			} catch (Exception e) {
 			}
-			fram3 = new ProfileSettingsFragment();
-			fragMentTra.addToBackStack(null);
-			fragMentTra = getFragmentManager().beginTransaction();
-			fragMentTra.add(rl.getId(), fram3);
-			fragMentTra.commit();
+			frag3 = new ProfileSettingsFragment();
+			fragmentTra.addToBackStack(null);
+			fragmentTra = getFragmentManager().beginTransaction();
+			fragmentTra.add(r.getId(), frag3);
+			fragmentTra.commit();
 		}
 	}
 

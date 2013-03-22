@@ -16,7 +16,7 @@
     <string name="welcome">Welcome to AMPS!</string>
     <string name="news">NEWS</string>
     <string name="headline1">Headline1 \nContent of headline 1</string>
-    <string name="title_activity_profile_account">ProfileAccountActivity</string>
+    <string name="title_fragment_profile_account">ProfileAccountFragment</string>
     <string name="title_activity_main_tab_menu">MainTabMenu</string>
     <string name="title_activity_profile_tab_menu">MainActivity</string>
     <string name="title_activity_profile">ProfileActivity</string>
@@ -29,15 +29,16 @@
     <string name="birthdate">Birth Date</string>
     <string name="update">Update</string>
     <string name="cancel">Cancel</string>
-    <string name="title_activity_profile_password">ProfilePasswordActivity</string>
+    <string name="title_fragment_profile_password">ProfilePasswordFragment</string>
     <string name="currentpassword">Current Password</string>
     <string name="newpassword">New Password</string>
     <string name="verifypassword">Verify Password</string>
-    <string name="title_activity_profile_settings">ProfileSettingsActivity</string>
+    <string name="title_fragment_profile_settings">ProfileSettingsFragment</string>
     <string name="noofprojectstodisplay">No. of Projects to display: </string>
     <string name="noofassetstodisplay">No. of Assets to display: </string>
     <string name="autopreviewassets">Automatically Preview Assets</string>
     <string name="requirechangepassword">Require change of password every 72 days</string>
+
     <string-array name="number1to10">
         <item>1</item>
         <item>2</item>
@@ -51,4 +52,43 @@
         <item>10</item>
     </string-array>
 
+    <string name="title_activity_project">ProjectActivity</string>
+    <string name="title_fragment_project_information">ProjectInformationFragment</string>
+    <string name="title_fragment_project_bulletins">ProjectBulletinsFragment</string>
+    <string name="title_fragment_project_charts">ProjectChartsFragment</string>
+    <string name="projectname">Project Name</string>
+    <string name="projecttype">Project Type</string>
+    <string name="projectstatus">Project Status</string>
+    <string name="client">Client</string>
+    <string name="estimatedstart">Estimated Start</string>
+    <string name="estimatedend">Estimated End</string>
+    <string name="estimatedduration">Estimated Duration (days)</string>
+    <string name="actualstart">Actual Start</string>
+    <string name="actualend">Actual End</string>
+    <string name="actualduration">Actual Duration (days)</string>
+    <string name="description">Description</string>
+    <string name="createdby">Created By: Admin</string>
+    <string name="creationdate">Creation Date: 04/03/2013</string>
+    <string name="lastupdatedby">Last Updated By: Admin</string>
+    <string name="lastupdatedon">Last Updated On: 04/03/2013</string>
+
+    <string-array name="projecttypevalue">
+        <item>Type A</item>
+        <item>Type B</item>
+        <item>Type C</item>
+        <item>Type D</item>
+    </string-array>
+    <string-array name="projectstatusvalue">
+        <item>Status A</item>
+        <item>Status B</item>
+        <item>Status C</item>
+        <item>Status D</item>
+    </string-array>
+    <string-array name="clientvalue">
+        <item>Client A</item>
+        <item>Client B</item>
+        <item>Client C</item>
+        <item>Client D</item>
+    </string-array>
+    
 </resources>

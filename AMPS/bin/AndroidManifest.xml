@@ -27,28 +27,40 @@
             android:label="@string/title_activity_home" >
         </activity>
         <activity
-            android:name="com.example.amps.ProfileAccountFragment"
-            android:label="@string/title_activity_profile_account" >
-        </activity>
-        <activity
             android:name="com.example.amps.MainTabMenu"
             android:label="@string/title_activity_main_tab_menu" >
-        </activity>
-        <activity
-            android:name="com.example.amps.ProfileTabMenu"
-            android:label="@string/title_activity_profile_tab_menu" >
         </activity>
         <activity
             android:name="com.example.amps.ProfileActivity"
             android:label="@string/title_activity_profile" >
         </activity>
         <activity
+            android:name="com.example.amps.ProfileAccountFragment"
+            android:label="@string/title_fragment_profile_account" >
+        </activity>
+        <activity
             android:name="com.example.amps.ProfilePasswordFragment"
-            android:label="@string/title_activity_profile_password" >
+            android:label="@string/title_fragment_profile_password" >
         </activity>
         <activity
             android:name="com.example.amps.ProfileSettingsFragment"
-            android:label="@string/title_activity_profile_settings" >
+            android:label="@string/title_fragment_profile_settings" >
+        </activity>
+        <activity
+            android:name="com.example.amps.ProjectActivity"
+            android:label="@string/title_activity_project" >
+        </activity>
+        <activity
+            android:name="com.example.amps.ProjectInformationFragment"
+            android:label="@string/title_fragment_project_information" >
+        </activity>
+        <activity
+            android:name="com.example.amps.ProjectBulletinsFragment"
+            android:label="@string/title_fragment_project_bulletins" >
+        </activity>
+        <activity
+            android:name="com.example.amps.ProjectChartsFragment"
+            android:label="@string/title_fragment_project_charts" >
         </activity>
     </application>
 
