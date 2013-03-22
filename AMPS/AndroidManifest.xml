@@ -27,7 +27,7 @@
             android:label="@string/title_activity_home" >
         </activity>
         <activity
-            android:name="com.example.amps.ProfileAccountActivity"
+            android:name="com.example.amps.ProfileAccountFragment"
             android:label="@string/title_activity_profile_account" >
         </activity>
         <activity
@@ -43,11 +43,11 @@
             android:label="@string/title_activity_profile" >
         </activity>
         <activity
-            android:name="com.example.amps.ProfilePasswordActivity"
+            android:name="com.example.amps.ProfilePasswordFragment"
             android:label="@string/title_activity_profile_password" >
         </activity>
         <activity
-            android:name="com.example.amps.ProfileSettingsActivity"
+            android:name="com.example.amps.ProfileSettingsFragment"
             android:label="@string/title_activity_profile_settings" >
         </activity>
     </application>
