@@ -1,0 +1,267 @@
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="3"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ProjectInformationFragment" >
+
+    <TextView
+        android:id="@+id/textViewProjectName"
+        android:layout_column="0"
+        android:layout_columnSpan="1"
+        android:layout_gravity="left|center_vertical"
+        android:layout_row="0"
+        android:text="@string/projectname"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextProjectName"
+        android:layout_column="1"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill_horizontal"
+        android:layout_row="0"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textViewProjectType"
+        android:layout_column="0"
+        android:layout_columnSpan="1"
+        android:layout_gravity="left|top"
+        android:layout_row="1"
+        android:text="@string/projecttype"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Spinner
+        android:id="@+id/spinnerProjectType"
+        android:layout_width="310dp"
+        android:layout_column="1"
+        android:layout_columnSpan="2"
+        android:layout_gravity="left|top"
+        android:layout_row="1"
+        android:entries="@array/projecttypevalue" />
+
+    <TextView
+        android:id="@+id/textViewProjectStatus"
+        android:layout_column="0"
+        android:layout_columnSpan="1"
+        android:layout_gravity="left|top"
+        android:layout_row="2"
+        android:text="@string/projectstatus"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Spinner
+        android:id="@+id/spinnerProjectStatus"
+        android:layout_width="310dp"
+        android:layout_column="1"
+        android:layout_columnSpan="2"
+        android:layout_gravity="left|top"
+        android:layout_row="2"
+        android:entries="@array/projectstatusvalue" />
+
+    <TextView
+        android:id="@+id/textViewClient"
+        android:layout_column="0"
+        android:layout_columnSpan="1"
+        android:layout_gravity="left|top"
+        android:layout_row="3"
+        android:text="@string/client"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Spinner
+        android:id="@+id/spinnerClient"
+        android:layout_width="310dp"
+        android:layout_column="1"
+        android:layout_columnSpan="2"
+        android:layout_gravity="left|top"
+        android:layout_row="3"
+        android:entries="@array/clientvalue" />
+
+    <TextView
+        android:id="@+id/textViewEstimatedStart"
+        android:layout_column="0"
+        android:layout_columnSpan="1"
+        android:layout_gravity="left|top"
+        android:layout_row="4"
+        android:text="@string/estimatedstart"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextEstimatedStart"
+        android:layout_column="1"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill_horizontal"
+        android:layout_row="4"
+        android:ems="10"
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/textViewEstimatedEnd"
+        android:layout_column="0"
+        android:layout_columnSpan="1"
+        android:layout_gravity="left|top"
+        android:layout_row="5"
+        android:text="@string/estimatedend"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextEstimatedEnd"
+        android:layout_column="1"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill_horizontal"
+        android:layout_row="5"
+        android:ems="10"
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/textViewEstimatedDuration"
+        android:layout_column="0"
+        android:layout_columnSpan="1"
+        android:layout_gravity="left|top"
+        android:layout_row="6"
+        android:text="@string/estimatedduration"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextEstimatedDuration"
+        android:layout_column="1"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill_horizontal"
+        android:layout_row="6"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textViewActualStart"
+        android:layout_column="0"
+        android:layout_columnSpan="1"
+        android:layout_gravity="left|top"
+        android:layout_row="7"
+        android:text="@string/actualstart"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextActualStart"
+        android:layout_column="1"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill_horizontal"
+        android:layout_row="7"
+        android:ems="10"
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/textViewActualEnd"
+        android:layout_column="0"
+        android:layout_columnSpan="1"
+        android:layout_gravity="left|top"
+        android:layout_row="8"
+        android:text="@string/actualend"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextActualEnd"
+        android:layout_column="1"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill_horizontal"
+        android:layout_row="8"
+        android:ems="10"
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/textViewActualDuration"
+        android:layout_column="0"
+        android:layout_columnSpan="1"
+        android:layout_gravity="left|top"
+        android:layout_row="9"
+        android:text="@string/actualduration"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextActualDuration"
+        android:layout_column="1"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill_horizontal"
+        android:layout_row="9"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textViewDescription"
+        android:layout_column="0"
+        android:layout_columnSpan="1"
+        android:layout_gravity="left|top"
+        android:layout_row="10"
+        android:text="@string/description"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_column="1"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill_horizontal"
+        android:layout_row="10"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <TextView
+        android:id="@+id/textViewCreatedby"
+        android:layout_column="0"
+        android:layout_columnSpan="3"
+        android:layout_gravity="left|top"
+        android:layout_row="11"
+        android:text="@string/createdby"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textViewCreationDate"
+        android:layout_column="0"
+        android:layout_columnSpan="3"
+        android:layout_gravity="left|top"
+        android:layout_row="12"
+        android:text="@string/creationdate"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textViewLastUpdatedBy"
+        android:layout_column="0"
+        android:layout_columnSpan="3"
+        android:layout_gravity="left|top"
+        android:layout_row="13"
+        android:text="@string/lastupdatedby"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textViewLastUpdatedOn"
+        android:layout_column="0"
+        android:layout_columnSpan="3"
+        android:layout_gravity="left|top"
+        android:layout_row="14"
+        android:text="@string/lastupdatedon"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="match_parent"
+        android:layout_column="0"
+        android:layout_columnSpan="3"
+        android:layout_gravity="left|top"
+        android:layout_row="15"
+        android:text="@string/update" >
+
+        <requestFocus />
+    </Button>
+
+    <Button
+        android:id="@+id/buttonCancel"
+        android:layout_width="match_parent"
+        android:layout_column="0"
+        android:layout_columnSpan="3"
+        android:layout_gravity="left|top"
+        android:layout_row="16"
+        android:text="@string/cancel" />
+
+</GridLayout>
