@@ -12,6 +12,11 @@
     <string name="theme">Theme</string>
     <string name="help">Help</string>
     <string name="logout">Logout</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="user_name">Username</string>
+    <string name="password">Password</string>
+    <string name="button_login">Login</string>
+    <string name="button_cancel">Cancel</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="welcome">Welcome to AMPS!</string>
     <string name="news">NEWS</string>
@@ -21,12 +26,23 @@
     <string name="title_activity_profile_tab_menu">MainActivity</string>
     <string name="title_activity_profile">ProfileActivity</string>
     <string name="username">Username</string>
-    <string name="fullname">Full Name</string>
-    <string name="contactno">Contact No.</string>
-    <string name="email">Email</string>
-    <string name="address">Address</string>
-    <string name="position">Position</string>
+    <string name="displayname">Display Name</string>
+    <string name="firstname">First Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="email">Email Address</string>
+    <string name="title">Title</string>
+    <string-array name="titlevalue">
+        <item>Mr</item>
+        <item>Ms</item>
+        <item>Mrs</item>
+    </string-array>
+    <string name="gender">Gender</string>
+    <string-array name="gendervalue">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
     <string name="birthdate">Birth Date</string>
+    <string name="ic">IC</string>
     <string name="update">Update</string>
     <string name="cancel">Cancel</string>
     <string name="title_fragment_profile_password">ProfilePasswordFragment</string>
@@ -90,5 +106,9 @@
         <item>Client C</item>
         <item>Client D</item>
     </string-array>
+
     
+    
+    <string name="title_fragment_search">SearchFragment</string>
+    <string name="title_fragment_report">ReportFragment</string>
 </resources>

@@ -28,48 +28,65 @@
         android:inputType="text" />
 
     <TextView
-        android:id="@+id/textViewFullName"
+        android:id="@+id/textViewDisplayName"
         android:layout_column="0"
         android:layout_columnSpan="1"
         android:layout_gravity="left|top"
         android:layout_row="1"
-        android:text="@string/fullname"
+        android:text="@string/displayname"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
-        android:id="@+id/editTextFullName"
+        android:id="@+id/editTextDisplayName"
         android:layout_column="1"
         android:layout_columnSpan="2"
         android:layout_gravity="fill_horizontal"
         android:layout_row="1"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textViewFirstName"
+        android:layout_column="0"
+        android:layout_columnSpan="1"
+        android:layout_gravity="left|top"
+        android:layout_row="2"
+        android:text="@string/firstname"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextFirstName"
+        android:layout_column="1"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill_horizontal"
+        android:layout_row="2"
         android:ems="10"
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/textViewContactNo"
+        android:id="@+id/textViewLastName"
         android:layout_column="0"
         android:layout_columnSpan="1"
         android:layout_gravity="left|top"
-        android:layout_row="2"
-        android:text="@string/contactno"
+        android:layout_row="3"
+        android:text="@string/lastname"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
-        android:id="@+id/editTextContactNo"
+        android:id="@+id/editTextLastName"
         android:layout_column="1"
         android:layout_columnSpan="2"
         android:layout_gravity="fill_horizontal"
-        android:layout_row="2"
+        android:layout_row="3"
         android:ems="10"
-        android:inputType="phone" />
-
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textViewEmail"
         android:layout_column="0"
         android:layout_columnSpan="1"
         android:layout_gravity="left|top"
-        android:layout_row="3"
+        android:layout_row="4"
         android:text="@string/email"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -78,52 +95,52 @@
         android:layout_column="1"
         android:layout_columnSpan="2"
         android:layout_gravity="fill_horizontal"
-        android:layout_row="3"
+        android:layout_row="4"
         android:ems="10"
         android:inputType="textEmailAddress" />
 
     <TextView
-        android:id="@+id/textViewAddress"
+        android:id="@+id/textViewTitle"
         android:layout_column="0"
         android:layout_columnSpan="1"
         android:layout_gravity="left|top"
-        android:layout_row="4"
-        android:text="@string/address"
+        android:layout_row="5"
+        android:text="@string/title"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <EditText
-        android:id="@+id/editTextAddress"
+    <Spinner
+        android:id="@+id/spinnerTitle"
+        android:layout_width="310dp"
         android:layout_column="1"
         android:layout_columnSpan="2"
-        android:layout_gravity="fill_horizontal"
-        android:layout_row="4"
-        android:ems="10"
-        android:inputType="textPostalAddress" />
+        android:layout_gravity="left|top"
+        android:layout_row="5"
+        android:entries="@array/titlevalue" />
 
     <TextView
-        android:id="@+id/textViewPosition"
+        android:id="@+id/textViewGender"
         android:layout_column="0"
         android:layout_columnSpan="1"
         android:layout_gravity="left|top"
-        android:layout_row="5"
-        android:text="@string/position"
+        android:layout_row="6"
+        android:text="@string/gender"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <EditText
-        android:id="@+id/editTextPosition"
+    <Spinner
+        android:id="@+id/spinnerGender"
+        android:layout_width="310dp"
         android:layout_column="1"
         android:layout_columnSpan="2"
-        android:layout_gravity="fill_horizontal"
-        android:layout_row="5"
-        android:ems="10"
-        android:inputType="text" />
+        android:layout_gravity="left|top"
+        android:layout_row="6"
+        android:entries="@array/gendervalue" />
 
     <TextView
         android:id="@+id/textViewBirthDate"
         android:layout_column="0"
         android:layout_columnSpan="1"
         android:layout_gravity="left|top"
-        android:layout_row="6"
+        android:layout_row="7"
         android:text="@string/birthdate"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -131,17 +148,36 @@
         android:id="@+id/editTextBirthDate"
         android:layout_column="1"
         android:layout_columnSpan="2"
-        android:layout_gravity="fill_horizontal"
-        android:layout_row="6"
+        android:layout_gravity="fill_horizontal|left|top"
+        android:layout_row="7"
         android:ems="10"
         android:inputType="date" />
 
+    <TextView
+        android:id="@+id/textViewIC"
+        android:layout_column="0"
+        android:layout_columnSpan="1"
+        android:layout_gravity="left|top"
+        android:layout_row="8"
+        android:text="@string/ic"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextIC"
+        android:layout_column="1"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill_horizontal|left|top"
+        android:layout_row="8"
+        android:ems="10"
+        android:inputType="text" />
+
     <Button
         android:id="@+id/buttonUpdate"
+        android:layout_width="match_parent"
         android:layout_column="0"
         android:layout_columnSpan="3"
-    android:layout_width="match_parent"
-        android:layout_row="7"
+        android:layout_gravity="top"
+        android:layout_row="9"
         android:text="@string/update" >
 
         <requestFocus />
@@ -149,10 +185,11 @@
 
     <Button
         android:id="@+id/buttonCancel"
+        android:layout_width="match_parent"
         android:layout_column="0"
         android:layout_columnSpan="3"
-    android:layout_width="match_parent"
-        android:layout_row="8"
+        android:layout_gravity="top"
+        android:layout_row="10"
         android:text="@string/cancel" >
     </Button>
 

@@ -57,7 +57,7 @@ public class MainActivity extends BaseActivity {
     	Intent intent;
     	try {
     		switch (view.getId()) {
-	    		case R.id.login:
+	    		case R.id.buttonLogin:
 	    			intent = new Intent(this, HomeActivity.class);
 	    			startActivity(intent);
 	    			finish();
