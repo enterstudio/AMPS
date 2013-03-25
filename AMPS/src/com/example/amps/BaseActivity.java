@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.view.MenuItem;
 
 public class BaseActivity extends Activity {
+	String userid;
+	String tokenid;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,7 @@ public class BaseActivity extends Activity {
     		case R.id.theme:
     		case R.id.help:
     		case R.id.logout:
-    			intent = new Intent(this, MainActivity.class);
+    			intent = new Intent(this, LoginActivity.class);
     			startActivity(intent);
     			finish();
     			return true;

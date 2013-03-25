@@ -3,6 +3,7 @@ package com.example.amps;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class HomeActivity extends BaseActivity {
 	
@@ -10,6 +11,16 @@ public class HomeActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
+		
+		Bundle extras = getIntent().getExtras();
+		if (extras != null) {
+		    userid = extras.getString("userid");
+		    tokenid = extras.getString("tokenid");
+		}
+		
+		TextView textViewWelcome = (TextView) findViewById(R.id.textViewWelcome);
+		textViewWelcome.setText(tokenid);
+		
 	}
 
 	@Override
@@ -23,33 +34,5 @@ public class HomeActivity extends BaseActivity {
 		 return super.onOptionsItemSelected(item);
 	 }
 	
-	/*@Override	
-    public boolean onOptionsItemSelected(MenuItem item) {
-		Intent intent;
-		switch (item.getItemId()) {
-    		case R.id.project1:
-    		case R.id.project2:
-    		case R.id.home:
-    			intent = new Intent(this, MainActivity.class);
-    			startActivity(intent);
-    			finish();
-    			return true;
-    		case R.id.admin:
-    		case R.id.profile:
-    			intent = new Intent(this, ProfileAccountActivity.class);
-    			startActivity(intent);
-    			finish();
-    			return true;
-    		case R.id.theme:
-    		case R.id.help:
-    		case R.id.logout:
-    			intent = new Intent(this, MainActivity.class);
-    			startActivity(intent);
-    			finish();
-    			return true;
-    		default:
-    			return false;
-		}
-    }*/
 
 }
