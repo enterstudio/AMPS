@@ -45,7 +45,8 @@ public class ProfileActivity extends BaseActivity implements TabListener {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
+		// Inflate the menu; this adds items to the action bar if it is present.
+		super.onCreateOptionsMenu(menu);
 		return true;
 	}
 

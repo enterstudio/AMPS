@@ -19,6 +19,7 @@
     <string name="button_cancel">Cancel</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="welcome">Welcome to AMPS!</string>
+    <string name="view">View</string>
     <string name="news">NEWS</string>
     <string name="headline1">Headline1 \nContent of headline 1</string>
     <string name="title_fragment_profile_account">ProfileAccountFragment</string>

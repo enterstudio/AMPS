@@ -19,26 +19,27 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.View;
+import android.view.ContextMenu.ContextMenuInfo;
 
 public class LoginActivity extends BaseActivity {
 	ProgressDialog dialog;
 	String szUsername = "Admin";
 	String szPassword = "Admin";
 	String error_code;
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 	}
-
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		/*super.onCreateOptionsMenu(menu);*/
 		return true;
 	}
 
@@ -61,8 +62,8 @@ public class LoginActivity extends BaseActivity {
 
 		@Override
 		protected void onPreExecute() {
-			dialog = ProgressDialog.show(LoginActivity.this, "Calling",
-					"AMPS API...", true);
+			dialog = ProgressDialog.show(LoginActivity.this, "Authenticating user",
+					"Please wait...", true);
 		}
 
 		@Override

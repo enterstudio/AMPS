@@ -1,23 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 	
-	<item android:id="@+id/collection"
-        android:icon="@drawable/collection"
-        android:title="@string/projects"
-        android:showAsAction="ifRoom|withText">
-        <menu>
-       		<item android:id="@+id/project1"
-        	android:title="@string/projects"
-        	android:showAsAction="never"
-        	android:onClick="onOptionsItemSelected" />
-        	
-        	<item android:id="@+id/project2"
-        	android:title="@string/projects"
-        	android:showAsAction="never"
-        	android:onClick="onOptionsItemSelected" />
-       </menu>
-        
-    </item>
-        
     <item
         android:id="@+id/action_settings"
         android:icon="@drawable/action_settings"
