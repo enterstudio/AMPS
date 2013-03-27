@@ -32,16 +32,7 @@
     <string name="lastname">Last Name</string>
     <string name="email">Email Address</string>
     <string name="title">Title</string>
-    <string-array name="titlevalue">
-        <item>Mr</item>
-        <item>Ms</item>
-        <item>Mrs</item>
-    </string-array>
     <string name="gender">Gender</string>
-    <string-array name="gendervalue">
-        <item>Male</item>
-        <item>Female</item>
-    </string-array>
     <string name="birthdate">Birth Date</string>
     <string name="ic">IC</string>
     <string name="update">Update</string>

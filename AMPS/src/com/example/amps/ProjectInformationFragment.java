@@ -53,7 +53,19 @@ public class ProjectInformationFragment extends Fragment implements Settings {
 	TextView textViewCreationDate;
 	TextView textViewLastUpdatedBy;
 	TextView textViewLastUpdatedDate;
+	
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
 
+	public void setTokenid(String tokenid) {
+		this.tokenid = tokenid;
+	}
+
+	public void setProject_id(String project_id) {
+		this.project_id = project_id;
+	}
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -77,18 +89,6 @@ public class ProjectInformationFragment extends Fragment implements Settings {
 		textViewLastUpdatedDate = (TextView) getActivity().findViewById(R.id.textViewLastUpdatedDate);
 		GetProjectInfo task = new GetProjectInfo();
 		task.execute();
-	}
-
-	public void setUserid(String userid) {
-		this.userid = userid;
-	}
-
-	public void setTokenid(String tokenid) {
-		this.tokenid = tokenid;
-	}
-
-	public void setProject_id(String project_id) {
-		this.project_id = project_id;
 	}
 
 	public class GetProjectInfo extends AsyncTask<Object, Object, Object> {
@@ -188,8 +188,6 @@ public class ProjectInformationFragment extends Fragment implements Settings {
 		protected void onPostExecute(Object result) {
 			dialog.dismiss();
 			parseJSONResponse((String) result);
-			textViewCreatedBy.setText("Created By: " + created_username);;
-			
 		}
 
 		public String retrieveUser() {
@@ -225,6 +223,7 @@ public class ProjectInformationFragment extends Fragment implements Settings {
 				data_array = job.getJSONArray("data_array");
 				JSONObject dataJob = new JSONObject(data_array.getString(0));
 				created_username = dataJob.getString("username");
+				textViewCreatedBy.setText("Created By: " + created_username);
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
@@ -249,7 +248,6 @@ public class ProjectInformationFragment extends Fragment implements Settings {
 		protected void onPostExecute(Object result) {
 			dialog.dismiss();
 			parseJSONResponse((String) result);
-			textViewLastUpdatedBy.setText("Updated By: " + updated_username);;
 			
 		}
 
@@ -286,6 +284,7 @@ public class ProjectInformationFragment extends Fragment implements Settings {
 				data_array = job.getJSONArray("data_array");
 				JSONObject dataJob = new JSONObject(data_array.getString(0));
 				updated_username = dataJob.getString("username");
+				textViewLastUpdatedBy.setText("Updated By: " + updated_username);;
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}

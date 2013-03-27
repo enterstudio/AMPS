@@ -8,17 +8,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RelativeLayout;
 
-public class ProfileActivity extends BaseActivity implements TabListener {
+public class ProfileActivity extends BaseActivity implements TabListener, Settings {
 	RelativeLayout r;
 	FragmentTransaction fragmentTra = null;
-	ProfileAccountFragment frag1;
-	ProfilePasswordFragment frag2;
-	ProfileSettingsFragment frag3;
+	ProfileAccountFragment accountFragment;
+	ProfilePasswordFragment passwordFragment;
+	ProfileSettingsFragment settingsFragment;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profile);
+		
+		settings = getSharedPreferences(SETTINGS, 0);
 
 		try {
 			r = (RelativeLayout) findViewById(R.id.activity_profile);
@@ -67,30 +69,32 @@ public class ProfileActivity extends BaseActivity implements TabListener {
 				r.removeAllViews();
 			} catch (Exception e) {
 			}
-			frag1 = new ProfileAccountFragment();
+			accountFragment = new ProfileAccountFragment();
+			accountFragment.setUserid(settings.getString("userid", null));
+			accountFragment.setTokenid(settings.getString("tokenid", null));
 			fragmentTra.addToBackStack(null);
 			fragmentTra = getFragmentManager().beginTransaction();
-			fragmentTra.add(r.getId(), frag1);
+			fragmentTra.add(r.getId(), accountFragment);
 			fragmentTra.commit();
 		} else if (tab.getText().equals("Password")) {
 			try {
 				r.removeAllViews();
 			} catch (Exception e) {
 			}
-			frag2 = new ProfilePasswordFragment();
+			passwordFragment = new ProfilePasswordFragment();
 			fragmentTra.addToBackStack(null);
 			fragmentTra = getFragmentManager().beginTransaction();
-			fragmentTra.add(r.getId(), frag2);
+			fragmentTra.add(r.getId(), passwordFragment);
 			fragmentTra.commit();
 		} else if (tab.getText().equals("Settings")) {
 			try {
 				r.removeAllViews();
 			} catch (Exception e) {
 			}
-			frag3 = new ProfileSettingsFragment();
+			settingsFragment = new ProfileSettingsFragment();
 			fragmentTra.addToBackStack(null);
 			fragmentTra = getFragmentManager().beginTransaction();
-			fragmentTra.add(r.getId(), frag3);
+			fragmentTra.add(r.getId(), settingsFragment);
 			fragmentTra.commit();
 		}
 	}
