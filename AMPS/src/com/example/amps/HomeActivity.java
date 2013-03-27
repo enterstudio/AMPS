@@ -105,11 +105,10 @@ public class HomeActivity extends BaseActivity implements Settings {
 		}
 
 		public String retrieveProjects() {
-			String szaAPIURL = "http://54.251.38.14/AMPS/ampslt/AMPSAPI/";
 			String responseBody = "";
 			// Instantiate an HttpClient
 			HttpClient httpclient = new DefaultHttpClient();
-			HttpPost httppost = new HttpPost(szaAPIURL + "getProjectInfo");
+			HttpPost httppost = new HttpPost(SZAAPIURL + "getProjectInfo");
 
 			// Post parameters
 			ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();

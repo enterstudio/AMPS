@@ -81,11 +81,10 @@ public class LoginActivity extends BaseActivity implements Settings {
 
 		
 		public String login() {
-			String szaAPIURL = "http://54.251.38.14/AMPS/ampslt/AMPSAPI/";
 			String responseBody = "";
 			// Instantiate an HttpClient
 			HttpClient httpclient = new DefaultHttpClient();
-			HttpPost httppost = new HttpPost(szaAPIURL + "Authenticate");
+			HttpPost httppost = new HttpPost(SZAAPIURL + "Authenticate");
 
 			// Post parameters
 			ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();

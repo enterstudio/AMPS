@@ -25,7 +25,7 @@ import android.widget.EditText;
 
 import android.widget.TextView;
 
-public class ProjectInformationFragment extends Fragment {
+public class ProjectInformationFragment extends Fragment implements Settings {
 	ProgressDialog dialog;
 	String userid;
 	String tokenid;
@@ -122,11 +122,10 @@ public class ProjectInformationFragment extends Fragment {
 		}
 
 		public String retrieveProject() {
-			String szaAPIURL = "http://54.251.38.14/AMPS/ampslt/AMPSAPI/";
 			String responseBody = "";
 			// Instantiate an HttpClient
 			HttpClient httpclient = new DefaultHttpClient();
-			HttpPost httppost = new HttpPost(szaAPIURL + "getProjectInfo");
+			HttpPost httppost = new HttpPost(SZAAPIURL + "getProjectInfo");
 
 			// Post parameters
 			ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
@@ -194,11 +193,10 @@ public class ProjectInformationFragment extends Fragment {
 		}
 
 		public String retrieveUser() {
-			String szaAPIURL = "http://54.251.38.14/AMPS/ampslt/AMPSAPI/";
 			String responseBody = "";
 			// Instantiate an HttpClient
 			HttpClient httpclient = new DefaultHttpClient();
-			HttpPost httppost = new HttpPost(szaAPIURL + "getUserInfo");
+			HttpPost httppost = new HttpPost(SZAAPIURL + "getUserInfo");
 
 			// Post parameters
 			ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
@@ -256,11 +254,10 @@ public class ProjectInformationFragment extends Fragment {
 		}
 
 		public String retrieveUser() {
-			String szaAPIURL = "http://54.251.38.14/AMPS/ampslt/AMPSAPI/";
 			String responseBody = "";
 			// Instantiate an HttpClient
 			HttpClient httpclient = new DefaultHttpClient();
-			HttpPost httppost = new HttpPost(szaAPIURL + "getUserInfo");
+			HttpPost httppost = new HttpPost(SZAAPIURL + "getUserInfo");
 
 			// Post parameters
 			ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
