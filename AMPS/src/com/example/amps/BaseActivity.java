@@ -3,17 +3,24 @@ package com.example.amps;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 
 public class BaseActivity extends Activity {
-	String userid;
-	String tokenid;
+	public String userid;
+	public String tokenid;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		/*SharedPreferences.Editor editor = getPreferences(MODE_PRIVATE).edit();
+        editor.putString("userid", userid);
+        editor.putString("tokenid", tokenid);
+        editor.commit();
+        String userid = getPreferences(MODE_PRIVATE).getString("userid", null);*/
+		
 	}
 	
 	

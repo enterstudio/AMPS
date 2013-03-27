@@ -21,9 +21,8 @@ import android.app.ProgressDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Spinner;
+
 import android.widget.TextView;
 
 public class ProjectInformationFragment extends Fragment {
@@ -42,10 +41,18 @@ public class ProjectInformationFragment extends Fragment {
 	String created_datetime;
 	String updated_userid;
 	String updated_datetime;
+	String created_username;
+	String updated_username;
 	EditText editTextProjectName;
 	EditText editTextEstimatedStart;
 	EditText editTextEstimatedEnd;
 	EditText editTextActualStart;
+	EditText editTextEstimatedDuration;
+	EditText editTextDescription;
+	TextView textViewCreatedBy;
+	TextView textViewCreationDate;
+	TextView textViewLastUpdatedBy;
+	TextView textViewLastUpdatedDate;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -62,6 +69,12 @@ public class ProjectInformationFragment extends Fragment {
 		editTextEstimatedStart = (EditText) getActivity().findViewById(R.id.editTextEstimatedStart);
 		editTextEstimatedEnd = (EditText) getActivity().findViewById(R.id.editTextEstimatedEnd);
 		editTextActualStart = (EditText) getActivity().findViewById(R.id.editTextActualStart);
+		editTextEstimatedDuration = (EditText) getActivity().findViewById(R.id.editTextEstimatedDuration);
+		editTextDescription = (EditText) getActivity().findViewById(R.id.editTextDescription);
+		textViewCreatedBy = (TextView) getActivity().findViewById(R.id.textViewCreatedBy);
+		textViewCreationDate = (TextView) getActivity().findViewById(R.id.textViewCreationDate);
+		textViewLastUpdatedBy = (TextView) getActivity().findViewById(R.id.textViewLastUpdatedBy);
+		textViewLastUpdatedDate = (TextView) getActivity().findViewById(R.id.textViewLastUpdatedDate);
 		GetProjectInfo task = new GetProjectInfo();
 		task.execute();
 	}
@@ -84,7 +97,7 @@ public class ProjectInformationFragment extends Fragment {
 		protected void onPreExecute() {
 			dialog = ProgressDialog.show(
 					ProjectInformationFragment.this.getActivity(),
-					"Retrieving Project", "Please wait...", true);
+					"Retrieving Project Information", "Please wait...", true);
 		}
 
 		@Override
@@ -100,6 +113,12 @@ public class ProjectInformationFragment extends Fragment {
 			editTextEstimatedStart.setText(estimated_datestart);
 			editTextEstimatedEnd.setText(estimated_dateend);
 			editTextActualStart.setText(actual_datestart);
+			editTextEstimatedDuration.setText(duration);
+			editTextDescription.setText(des);
+			textViewCreationDate.setText("Created On: " + created_datetime);
+			textViewLastUpdatedDate.setText("Updated On: " + updated_datetime);
+			GetCreatedUserInfo task = new GetCreatedUserInfo();
+			task.execute();
 		}
 
 		public String retrieveProject() {
@@ -114,7 +133,7 @@ public class ProjectInformationFragment extends Fragment {
 			postParameters.add(new BasicNameValuePair("tokenid", tokenid));
 			postParameters.add(new BasicNameValuePair("userid", userid));
 			postParameters.add(new BasicNameValuePair("condition",
-					"project_id LIKE '" + project_id + "'"));
+					"[project_id] LIKE '" + project_id + "'"));
 
 			// Instantiate a POST HTTP method
 			try {
@@ -140,13 +159,136 @@ public class ProjectInformationFragment extends Fragment {
 				estimated_datestart = dataJob.getString("estimated_datestart");
 				estimated_dateend = dataJob.getString("estimated_dateend");
 				actual_datestart = dataJob.getString("actual_datestart");
-				actual_datestart = dataJob.getString("actual_datestart");
 				actual_dateend = dataJob.getString("actual_dateend");
 				duration = dataJob.getString("duration");
 				created_userid = dataJob.getString("created_userid");
 				created_datetime = dataJob.getString("created_datetime");
 				updated_userid = dataJob.getString("updated_userid");
 				updated_datetime = dataJob.getString("updated_datetime");
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public class GetCreatedUserInfo extends AsyncTask<Object, Object, Object> {
+
+		@Override
+		protected void onPreExecute() {
+			dialog = ProgressDialog.show(
+					ProjectInformationFragment.this.getActivity(),
+					"Retrieving User Information", "Please wait...", true);
+		}
+
+		@Override
+		protected String doInBackground(Object... arg0) {
+			return retrieveUser();
+		}
+
+		@Override
+		protected void onPostExecute(Object result) {
+			dialog.dismiss();
+			parseJSONResponse((String) result);
+			textViewCreatedBy.setText("Created By: " + created_username);;
+			
+		}
+
+		public String retrieveUser() {
+			String szaAPIURL = "http://54.251.38.14/AMPS/ampslt/AMPSAPI/";
+			String responseBody = "";
+			// Instantiate an HttpClient
+			HttpClient httpclient = new DefaultHttpClient();
+			HttpPost httppost = new HttpPost(szaAPIURL + "getUserInfo");
+
+			// Post parameters
+			ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
+			postParameters.add(new BasicNameValuePair("tokenid", tokenid));
+			postParameters.add(new BasicNameValuePair("userid", userid));
+			postParameters.add(new BasicNameValuePair("condition",
+					"[userid] = '" + created_userid + "'"));
+
+			// Instantiate a POST HTTP method
+			try {
+				httppost.setEntity(new UrlEncodedFormEntity(postParameters));
+				ResponseHandler<String> responseHandler = new BasicResponseHandler();
+				responseBody = httpclient.execute(httppost, responseHandler);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return responseBody;
+		}
+
+		public void parseJSONResponse(String responseBody) {
+			JSONArray json, data_array;
+			JSONObject job;
+			try {
+				json = new JSONArray(responseBody);
+				job = json.getJSONObject(0);
+				data_array = job.getJSONArray("data_array");
+				JSONObject dataJob = new JSONObject(data_array.getString(0));
+				created_username = dataJob.getString("username");
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public class GetUpdatedUserInfo extends AsyncTask<Object, Object, Object> {
+
+		@Override
+		protected void onPreExecute() {
+			dialog = ProgressDialog.show(
+					ProjectInformationFragment.this.getActivity(),
+					"Retrieving User Information", "Please wait...", true);
+		}
+
+		@Override
+		protected String doInBackground(Object... arg0) {
+			return retrieveUser();
+		}
+
+		@Override
+		protected void onPostExecute(Object result) {
+			dialog.dismiss();
+			parseJSONResponse((String) result);
+			textViewLastUpdatedBy.setText("Updated By: " + updated_username);;
+			
+		}
+
+		public String retrieveUser() {
+			String szaAPIURL = "http://54.251.38.14/AMPS/ampslt/AMPSAPI/";
+			String responseBody = "";
+			// Instantiate an HttpClient
+			HttpClient httpclient = new DefaultHttpClient();
+			HttpPost httppost = new HttpPost(szaAPIURL + "getUserInfo");
+
+			// Post parameters
+			ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
+			postParameters.add(new BasicNameValuePair("tokenid", tokenid));
+			postParameters.add(new BasicNameValuePair("userid", userid));
+			postParameters.add(new BasicNameValuePair("condition",
+					"[userid] = '" + updated_userid + "'"));
+
+			// Instantiate a POST HTTP method
+			try {
+				httppost.setEntity(new UrlEncodedFormEntity(postParameters));
+				ResponseHandler<String> responseHandler = new BasicResponseHandler();
+				responseBody = httpclient.execute(httppost, responseHandler);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return responseBody;
+		}
+
+		public void parseJSONResponse(String responseBody) {
+			JSONArray json, data_array;
+			JSONObject job;
+			try {
+				json = new JSONArray(responseBody);
+				job = json.getJSONObject(0);
+				data_array = job.getJSONArray("data_array");
+				JSONObject dataJob = new JSONObject(data_array.getString(0));
+				updated_username = dataJob.getString("username");
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}

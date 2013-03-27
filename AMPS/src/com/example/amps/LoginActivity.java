@@ -17,6 +17,7 @@ import org.json.JSONObject;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -29,7 +30,6 @@ public class LoginActivity extends BaseActivity {
 	String szUsername = "Admin";
 	String szPassword = "Admin";
 	String error_code;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
