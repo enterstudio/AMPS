@@ -6,20 +6,22 @@ import android.app.ActionBar.*;
 import android.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.RelativeLayout;
 
-public class ProfileActivity extends BaseActivity implements TabListener, Settings {
+public class ProfileActivity extends BaseActivity implements TabListener,
+		Settings {
 	RelativeLayout r;
 	FragmentTransaction fragmentTra = null;
 	ProfileAccountFragment accountFragment;
 	ProfilePasswordFragment passwordFragment;
 	ProfileSettingsFragment settingsFragment;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profile);
-		
+
 		settings = getSharedPreferences(SETTINGS, 0);
 
 		try {
@@ -104,4 +106,21 @@ public class ProfileActivity extends BaseActivity implements TabListener, Settin
 		// TODO Auto-generated method stub
 
 	}
+
+	public void onClick(View view) {
+		try {
+			switch (view.getId()) {
+			case R.id.buttonUpdate:
+				accountFragment.onClick(view);
+				break;
+			case R.id.buttonCancel:
+				break;
+			default:
+				finish();
+				break;
+			}
+		} catch (Exception e) {
+		}
+	}
+
 }
