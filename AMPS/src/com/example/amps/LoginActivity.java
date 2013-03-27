@@ -20,16 +20,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.View;
-import android.view.ContextMenu.ContextMenuInfo;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity implements Settings {
 	ProgressDialog dialog;
 	String szUsername = "Admin";
 	String szPassword = "Admin";
 	String error_code;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -77,8 +76,6 @@ public class LoginActivity extends BaseActivity {
 			dialog.dismiss();
 			parseJSONResponse((String)result);
 			Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-			intent.putExtra("userid", userid);
-			intent.putExtra("tokenid", tokenid);
 			startActivity(intent);
 		}
 
@@ -130,8 +127,11 @@ public class LoginActivity extends BaseActivity {
 				json = new JSONArray(responseBody);
 				JSONObject job = json.getJSONObject(0);
 				error_code = job.getString("error_code");
-				userid = job.getString("userid");
-				tokenid = job.getString("tokenid");
+				SharedPreferences settings = getSharedPreferences(SETTINGS, 0);
+			    SharedPreferences.Editor editor = settings.edit();
+		        editor.putString("userid", job.getString("userid"));
+		        editor.putString("tokenid", job.getString("tokenid"));
+		        editor.commit();
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}

@@ -1,6 +1,5 @@
 package com.example.amps;
 
-import java.security.MessageDigest;
 import java.util.ArrayList;
 
 import org.apache.http.NameValuePair;
@@ -15,8 +14,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.example.amps.LoginActivity.AuthenticateUser;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -24,29 +21,20 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
 
-public class HomeActivity extends BaseActivity {
+public class HomeActivity extends BaseActivity implements Settings {
 	ProgressDialog dialog;
-	private ArrayList<String> spinnerArray;
 	String error_code;
 	ArrayList<String> nameArray = new ArrayList<String>();
 	ArrayList<String> projectIdArray = new ArrayList<String>();
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
-
-		Bundle extras = getIntent().getExtras();
-		if (extras != null) {
-			userid = extras.getString("userid");
-			tokenid = extras.getString("tokenid");
-		}
-
+		settings = getSharedPreferences(SETTINGS, 0);
 		GetProjectInfo task = new GetProjectInfo();
 		task.execute();
 
@@ -72,8 +60,6 @@ public class HomeActivity extends BaseActivity {
 				Spinner spinner = (Spinner) findViewById(R.id.spinnerProjects);
 				int index = spinner.getSelectedItemPosition();
 				Intent intent = new Intent(HomeActivity.this, ProjectActivity.class);
-				intent.putExtra("userid", userid);
-				intent.putExtra("tokenid", tokenid);
 				intent.putExtra("project_id", projectIdArray.get(index));
 				startActivity(intent);
 				break;
@@ -127,8 +113,8 @@ public class HomeActivity extends BaseActivity {
 
 			// Post parameters
 			ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
-			postParameters.add(new BasicNameValuePair("tokenid", tokenid));
-			postParameters.add(new BasicNameValuePair("userid", userid));
+			postParameters.add(new BasicNameValuePair("tokenid", settings.getString("tokenid", null)));
+			postParameters.add(new BasicNameValuePair("userid", settings.getString("userid", null)));
 
 			// Instantiate a POST HTTP method
 			try {

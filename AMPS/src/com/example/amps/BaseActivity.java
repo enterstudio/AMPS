@@ -6,21 +6,19 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.SubMenu;
 
 public class BaseActivity extends Activity {
-	public String userid;
-	public String tokenid;
+	SharedPreferences settings;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		/*SharedPreferences.Editor editor = getPreferences(MODE_PRIVATE).edit();
-        editor.putString("userid", userid);
-        editor.putString("tokenid", tokenid);
-        editor.commit();
-        String userid = getPreferences(MODE_PRIVATE).getString("userid", null);*/
-		
+		/*SharedPreferences settings = getSharedPreferences(SETTINGS, 0);
+			    SharedPreferences.Editor editor = settings.edit();
+		        editor.putString("userid", job.getString("userid"));
+		        editor.putString("tokenid", job.getString("tokenid"));
+		        editor.commit();
+        settings.getString("tokenid", null))*/
 	}
 	
 	
