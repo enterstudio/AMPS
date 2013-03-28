@@ -15,8 +15,7 @@
         android:layout_columnSpan="2"
         android:layout_gravity="center_horizontal|top"
         android:layout_row="0"
-        android:text="@string/welcome"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="@string/welcome" />
     
     <Spinner
         android:id="@+id/spinnerProjects"
@@ -41,8 +40,7 @@
         android:layout_columnSpan="2"
         android:layout_gravity="left|top"
         android:layout_row="2"
-        android:text="@string/news"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="@string/news" />
 
     <GridLayout
         android:layout_width="match_parent"
@@ -71,8 +69,7 @@
             android:layout_gravity="left|top"
             android:layout_row="0"
             android:maxLines="4"
-            android:text="@string/headline1"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:text="@string/headline1" />
     </GridLayout>
 
     

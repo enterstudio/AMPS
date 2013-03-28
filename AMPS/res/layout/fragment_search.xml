@@ -24,7 +24,6 @@
         android:layout_gravity="left|top"
         android:layout_row="1"
         android:maxLines="4"
-        android:text="@string/headline1"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:text="@string/headline1" />
 
 </GridLayout>
