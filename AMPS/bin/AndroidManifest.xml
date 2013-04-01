@@ -7,8 +7,10 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="17" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-<application
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -69,6 +71,14 @@
         <activity
             android:name="com.example.amps.ReportFragment"
             android:label="@string/title_fragment_report" >
+        </activity>
+        <activity
+            android:name="com.example.amps.ReportActivity"
+            android:label="@string/title_activity_report" >
+        </activity>
+        <activity
+            android:name="com.example.amps.SearchActivity"
+            android:label="@string/title_activity_search" >
         </activity>
     </application>
 

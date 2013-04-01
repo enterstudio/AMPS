@@ -34,17 +34,23 @@ public class BaseActivity extends Activity {
 	@Override	
     public boolean onOptionsItemSelected(MenuItem item) {
 		Intent intent;
-		switch (item.getItemId()) {/*
-    		case R.id.project1:
-    			intent = new Intent(this, ProjectActivity.class);
+		switch (item.getItemId()) {
+			case R.id.workingassets:
+				break;
+			case R.id.projects:
+				break;
+			case R.id.folder:
+				break;
+			case R.id.search:
+				intent = new Intent(this, SearchActivity.class);
     			startActivity(intent);
     			finish();
-    			break;
-    		case R.id.project2:
-    			intent = new Intent(this, ProjectActivity.class);
+				break;
+			case R.id.report:
+				intent = new Intent(this, ReportActivity.class);
     			startActivity(intent);
     			finish();
-    			break;*/
+				break;
     		case R.id.home:
     			intent = new Intent(this, HomeActivity.class);
     			startActivity(intent);

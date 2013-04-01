@@ -1,47 +1,72 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-	
-    <item
-        android:id="@+id/action_settings"
-        android:icon="@drawable/action_settings"
-        android:title="@string/action_settings"
-        android:showAsAction="ifRoom|withText" />
 
+    <item
+        android:id="@+id/collections"
+        android:icon="@drawable/collection"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/collections">
+        <item android:id="@+id/workingassets"
+        	android:title="@string/workingassets"
+        	android:showAsAction="never"
+        	android:onClick="onOptionsItemSelected" />
+        	
+        	<item android:id="@+id/projects"
+        	android:title="@string/projects"
+        	android:showAsAction="never"
+        	android:onClick="onOptionsItemSelected" />
+        	
+        	<item android:id="@+id/folder"
+        	android:title="@string/folder"
+        	android:showAsAction="never"
+        	android:onClick="onOptionsItemSelected" />
+        	
+        	<item android:id="@+id/search"
+        	android:title="@string/search"
+        	android:showAsAction="never"
+        	android:onClick="onOptionsItemSelected" />
+        	
+        	<item android:id="@+id/report"
+        	android:title="@string/report"
+        	android:showAsAction="never"
+        	android:onClick="onOptionsItemSelected" />
+    </item>
     <item
         android:id="@+id/action_overflow"
         android:icon="@drawable/ic_action_overflow"
-        android:title="@string/action_overflow"
-        android:showAsAction="ifRoom|withText">
-    	<menu>
-       		<item android:id="@+id/home"
-        	android:title="@string/home"
-        	android:showAsAction="never"
-        	android:onClick="onOptionsItemSelected" />
-        	
-        	<item android:id="@+id/admin"
-        	android:title="@string/admin"
-        	android:showAsAction="never"
-        	android:onClick="onOptionsItemSelected" />
-        	
-        	<item android:id="@+id/profile"
-        	android:title="@string/profile"
-        	android:showAsAction="never"
-        	android:onClick="onOptionsItemSelected" />
-        	
-        	<item android:id="@+id/theme"
-        	android:title="@string/theme"
-        	android:showAsAction="never"
-        	android:onClick="onOptionsItemSelected" />
-        	
-        	<item android:id="@+id/help"
-        	android:title="@string/help"
-        	android:showAsAction="never"
-        	android:onClick="onOptionsItemSelected" />
-        	
-        	<item android:id="@+id/logout"
-        	android:title="@string/logout"
-        	android:showAsAction="never"
-        	android:onClick="onOptionsItemSelected" />
-       </menu>
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/action_overflow">
+        <menu>
+            <item
+                android:id="@+id/home"
+                android:onClick="onOptionsItemSelected"
+                android:showAsAction="never"
+                android:title="@string/home"/>
+            <item
+                android:id="@+id/admin"
+                android:onClick="onOptionsItemSelected"
+                android:showAsAction="never"
+                android:title="@string/admin"/>
+            <item
+                android:id="@+id/profile"
+                android:onClick="onOptionsItemSelected"
+                android:showAsAction="never"
+                android:title="@string/profile"/>
+            <item
+                android:id="@+id/theme"
+                android:onClick="onOptionsItemSelected"
+                android:showAsAction="never"
+                android:title="@string/theme"/>
+            <item
+                android:id="@+id/help"
+                android:onClick="onOptionsItemSelected"
+                android:showAsAction="never"
+                android:title="@string/help"/>
+            <item
+                android:id="@+id/logout"
+                android:onClick="onOptionsItemSelected"
+                android:showAsAction="never"
+                android:title="@string/logout"/>
+        </menu>
     </item>
-        
+
 </menu>
