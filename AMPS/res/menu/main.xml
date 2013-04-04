@@ -5,30 +5,28 @@
         android:icon="@drawable/collection"
         android:showAsAction="ifRoom|withText"
         android:title="@string/collections">
-        <item android:id="@+id/workingassets"
-        	android:title="@string/workingassets"
-        	android:showAsAction="never"
-        	android:onClick="onOptionsItemSelected" />
-        	
-        	<item android:id="@+id/projects"
-        	android:title="@string/projects"
-        	android:showAsAction="never"
-        	android:onClick="onOptionsItemSelected" />
-        	
-        	<item android:id="@+id/folder"
-        	android:title="@string/folder"
-        	android:showAsAction="never"
-        	android:onClick="onOptionsItemSelected" />
-        	
-        	<item android:id="@+id/search"
-        	android:title="@string/search"
-        	android:showAsAction="never"
-        	android:onClick="onOptionsItemSelected" />
-        	
-        	<item android:id="@+id/report"
-        	android:title="@string/report"
-        	android:showAsAction="never"
-        	android:onClick="onOptionsItemSelected" />
+        <menu>
+        <item
+            android:id="@+id/workingassets"
+            android:showAsAction="never"
+            android:title="@string/workingassets"/>
+        <item
+            android:id="@+id/projects"
+            android:showAsAction="never"
+            android:title="@string/projects"/>
+        <item
+            android:id="@+id/folder"
+            android:showAsAction="never"
+            android:title="@string/folder"/>
+        <item
+            android:id="@+id/search"
+            android:showAsAction="never"
+            android:title="@string/search"/>
+        <item
+            android:id="@+id/report"
+            android:showAsAction="never"
+            android:title="@string/report"/>
+        </menu>
     </item>
     <item
         android:id="@+id/action_overflow"
@@ -38,32 +36,26 @@
         <menu>
             <item
                 android:id="@+id/home"
-                android:onClick="onOptionsItemSelected"
                 android:showAsAction="never"
                 android:title="@string/home"/>
             <item
                 android:id="@+id/admin"
-                android:onClick="onOptionsItemSelected"
                 android:showAsAction="never"
                 android:title="@string/admin"/>
             <item
                 android:id="@+id/profile"
-                android:onClick="onOptionsItemSelected"
                 android:showAsAction="never"
                 android:title="@string/profile"/>
             <item
                 android:id="@+id/theme"
-                android:onClick="onOptionsItemSelected"
                 android:showAsAction="never"
                 android:title="@string/theme"/>
             <item
                 android:id="@+id/help"
-                android:onClick="onOptionsItemSelected"
                 android:showAsAction="never"
                 android:title="@string/help"/>
             <item
                 android:id="@+id/logout"
-                android:onClick="onOptionsItemSelected"
                 android:showAsAction="never"
                 android:title="@string/logout"/>
         </menu>

@@ -20,7 +20,7 @@ public class ProjectActivity extends BaseActivity implements TabListener, Settin
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profile);
-		
+		setTitle("Project");
 		settings = getSharedPreferences(SETTINGS, 0);
 		
 		Bundle extras = getIntent().getExtras();

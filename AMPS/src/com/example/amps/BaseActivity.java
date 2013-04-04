@@ -28,7 +28,7 @@ public class BaseActivity extends Activity {
 
 		getMenuInflater().inflate(R.menu.main, menu);
         
-		return (super.onCreateOptionsMenu(menu));
+		return true;
 	}
 	
 	@Override	
@@ -36,8 +36,14 @@ public class BaseActivity extends Activity {
 		Intent intent;
 		switch (item.getItemId()) {
 			case R.id.workingassets:
+				intent = new Intent(this, WorkingAssetsActivity.class);
+    			startActivity(intent);
+    			finish();
 				break;
 			case R.id.projects:
+				intent = new Intent(this, ProjectListActivity.class);
+    			startActivity(intent);
+    			finish();
 				break;
 			case R.id.folder:
 				break;
@@ -75,7 +81,7 @@ public class BaseActivity extends Activity {
     		default:
     			break;
 		}
-		return false;
+		return true;
     }
 
 }

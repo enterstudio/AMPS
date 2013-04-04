@@ -65,20 +65,20 @@
             android:label="@string/title_fragment_project_charts" >
         </activity>
         <activity
-            android:name="com.example.amps.SearchFragment"
-            android:label="@string/title_fragment_search" >
-        </activity>
-        <activity
-            android:name="com.example.amps.ReportFragment"
-            android:label="@string/title_fragment_report" >
-        </activity>
-        <activity
             android:name="com.example.amps.ReportActivity"
             android:label="@string/title_activity_report" >
         </activity>
         <activity
             android:name="com.example.amps.SearchActivity"
             android:label="@string/title_activity_search" >
+        </activity>
+        <activity
+            android:name="com.example.amps.WorkingAssetsActivity"
+            android:label="@string/title_activity_working_assets" >
+        </activity>
+        <activity
+            android:name="com.example.amps.ProjectListActivity"
+            android:label="@string/title_activity_project_list" >
         </activity>
     </application>
 

@@ -21,7 +21,7 @@ public class ProfileActivity extends BaseActivity implements TabListener,
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profile);
-
+		setTitle("Profile");
 		settings = getSharedPreferences(SETTINGS, 0);
 
 		try {
