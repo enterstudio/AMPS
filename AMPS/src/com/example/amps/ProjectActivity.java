@@ -8,21 +8,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RelativeLayout;
 
-public class ProjectActivity extends BaseActivity implements TabListener, Settings {
+public class ProjectActivity extends BaseActivity implements TabListener,
+		Settings {
 	RelativeLayout r;
 	FragmentTransaction fragmentTra = null;
 	ProjectInformationFragment infoFragment;
 	ProjectBulletinsFragment bulletinsFragment;
 	ProjectChartsFragment chartsFragment;
 	String project_id;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profile);
 		setTitle("Project");
 		settings = getSharedPreferences(SETTINGS, 0);
-		
+
 		Bundle extras = getIntent().getExtras();
 		if (extras != null) {
 			project_id = extras.getString("project_id");
@@ -46,9 +47,6 @@ public class ProjectActivity extends BaseActivity implements TabListener, Settin
 		} catch (Exception e) {
 			e.getMessage();
 		}
-		/**
-		 * Hiding Action Bar
-		 */
 	}
 
 	@Override
@@ -56,6 +54,12 @@ public class ProjectActivity extends BaseActivity implements TabListener, Settin
 		// Inflate the menu; this adds items to the action bar if it is present.
 		super.onCreateOptionsMenu(menu);
 		return true;
+	}
+
+	@Override
+	public void onTabUnselected(Tab tab, FragmentTransaction arg1) {
+		// TODO Auto-generated method stub
+
 	}
 
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -104,12 +108,5 @@ public class ProjectActivity extends BaseActivity implements TabListener, Settin
 			fragmentTra.add(r.getId(), chartsFragment);
 			fragmentTra.commit();
 		}
-	}
-	
-
-	@Override
-	public void onTabUnselected(Tab tab, FragmentTransaction arg1) {
-		// TODO Auto-generated method stub
-
 	}
 }

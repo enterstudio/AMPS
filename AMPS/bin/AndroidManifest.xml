@@ -73,12 +73,32 @@
             android:label="@string/title_activity_search" >
         </activity>
         <activity
-            android:name="com.example.amps.WorkingAssetsActivity"
+            android:name="com.example.amps.WorkingAssetsListActivity"
             android:label="@string/title_activity_working_assets" >
         </activity>
         <activity
             android:name="com.example.amps.ProjectListActivity"
             android:label="@string/title_activity_project_list" >
+        </activity>
+        <activity
+            android:name="com.example.amps.WorkingAssetsActivity"
+            android:label="@string/title_activity_working_assets" >
+        </activity>
+        <activity
+            android:name="com.example.amps.WorkingAssetsPropertiesFragment"
+            android:label="@string/title_fragment_working_assets_properties" >
+        </activity>
+        <activity
+            android:name="com.example.amps.WorkingAssetsCommentsFragment"
+            android:label="@string/title_fragment_working_assets_comments" >
+        </activity>
+        <activity
+            android:name="com.example.amps.WorkingAssetsRevisionsFragment"
+            android:label="@string/title_fragment_working_assets_revisions" >
+        </activity>
+        <activity
+            android:name="com.example.amps.WorkingAssetsLogHistoryFragment"
+            android:label="@string/title_fragment_working_assets_log_history" >
         </activity>
     </application>
 

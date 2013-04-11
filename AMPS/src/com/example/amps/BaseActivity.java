@@ -36,7 +36,7 @@ public class BaseActivity extends Activity {
 		Intent intent;
 		switch (item.getItemId()) {
 			case R.id.workingassets:
-				intent = new Intent(this, WorkingAssetsActivity.class);
+				intent = new Intent(this, WorkingAssetsListActivity.class);
     			startActivity(intent);
     			finish();
 				break;
