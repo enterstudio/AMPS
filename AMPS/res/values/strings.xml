@@ -116,5 +116,29 @@
     <string name="title_fragment_working_assets_comments">WorkingAssetsCommentsFragment</string>
     <string name="title_fragment_working_assets_revisions">WorkingAssetsRevisionsFragment</string>
     <string name="title_fragment_working_assets_log_history">WorkingAssetsLogHistoryFragment</string>
+    <string name="assetname">Asset Name</string>
+    <string name="underproject">Under Project</string>
+    <string name="workflow">Workflow</string>
+    <string name="currentstep">Current Step</string>
+    <string name="assigneduser">Assigned User</string>
+    <string name="trackingstatus">Tracking Status</string>
+
+    <string-array name="workflowvalue">
+        <item>Workflow 1</item>
+        <item>Workflow 2</item>
+        <item>Workflow 3</item>
+        <item>Workflow 4</item>
+    </string-array>
+    <string-array name="currentstepvalue">
+        <item>Step 1</item>
+        <item>Step 2</item>
+        <item>Step 3</item>
+        <item>Step 4</item>
+    </string-array>
+
+    <string name="comment">Comment</string>
+    <string name="revision">Revision</string>
+    <string name="user">User</string>
+    <string name="date">Date</string>
 
 </resources>

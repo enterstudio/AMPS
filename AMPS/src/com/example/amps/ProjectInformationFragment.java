@@ -27,22 +27,10 @@ import android.widget.TextView;
 
 public class ProjectInformationFragment extends Fragment implements Settings {
 	ProgressDialog dialog;
+	Project p = new Project();
 	String userid;
 	String tokenid;
 	String project_id;
-	String name;
-	String des;
-	String estimated_datestart;
-	String estimated_dateend;
-	String actual_datestart;
-	String actual_dateend;
-	String duration;
-	String created_userid;
-	String created_datetime;
-	String updated_userid;
-	String updated_datetime;
-	String created_username;
-	String updated_username;
 	EditText editTextProjectName;
 	EditText editTextEstimatedStart;
 	EditText editTextEstimatedEnd;
@@ -109,14 +97,14 @@ public class ProjectInformationFragment extends Fragment implements Settings {
 		protected void onPostExecute(Object result) {
 			dialog.dismiss();
 			parseJSONResponse((String) result);
-			editTextProjectName.setText(name);
-			editTextEstimatedStart.setText(estimated_datestart);
-			editTextEstimatedEnd.setText(estimated_dateend);
-			editTextActualStart.setText(actual_datestart);
-			editTextEstimatedDuration.setText(duration);
-			editTextDescription.setText(des);
-			textViewCreationDate.setText("Created On: " + created_datetime);
-			textViewLastUpdatedDate.setText("Updated On: " + updated_datetime);
+			editTextProjectName.setText(p.getName());
+			editTextEstimatedStart.setText(p.getEstimated_datestart());
+			editTextEstimatedEnd.setText(p.getEstimated_dateend());
+			editTextActualStart.setText(p.getActual_datestart());
+			editTextEstimatedDuration.setText(p.getDuration());
+			editTextDescription.setText(p.getDes());
+			textViewCreationDate.setText("Created On: " + p.getCreated_datetime());
+			textViewLastUpdatedDate.setText("Updated On: " + p.getUpdated_datetime());
 			GetCreatedUserInfo task = new GetCreatedUserInfo();
 			task.execute();
 		}
@@ -153,17 +141,17 @@ public class ProjectInformationFragment extends Fragment implements Settings {
 				job = json.getJSONObject(0);
 				data_array = job.getJSONArray("data_array");
 				JSONObject dataJob = new JSONObject(data_array.getString(0));
-				name = dataJob.getString("name");
-				des = dataJob.getString("des");
-				estimated_datestart = dataJob.getString("estimated_datestart");
-				estimated_dateend = dataJob.getString("estimated_dateend");
-				actual_datestart = dataJob.getString("actual_datestart");
-				actual_dateend = dataJob.getString("actual_dateend");
-				duration = dataJob.getString("duration");
-				created_userid = dataJob.getString("created_userid");
-				created_datetime = dataJob.getString("created_datetime");
-				updated_userid = dataJob.getString("updated_userid");
-				updated_datetime = dataJob.getString("updated_datetime");
+				p.setName(dataJob.getString("name"));
+				p.setDes(dataJob.getString("des"));
+				p.setEstimated_datestart(dataJob.getString("estimated_datestart"));
+				p.setEstimated_dateend(dataJob.getString("estimated_dateend"));
+				p.setActual_datestart(dataJob.getString("actual_datestart"));
+				p.setActual_dateend(dataJob.getString("actual_dateend"));
+				p.setDuration(dataJob.getString("duration"));
+				p.setCreated_userid(dataJob.getString("created_userid"));
+				p.setCreated_datetime(dataJob.getString("created_datetime"));
+				p.setUpdated_userid(dataJob.getString("updated_userid"));
+				p.setUpdated_datetime(dataJob.getString("updated_datetime"));
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
@@ -201,7 +189,7 @@ public class ProjectInformationFragment extends Fragment implements Settings {
 			postParameters.add(new BasicNameValuePair("tokenid", tokenid));
 			postParameters.add(new BasicNameValuePair("userid", userid));
 			postParameters.add(new BasicNameValuePair("condition",
-					"[userid] = '" + created_userid + "'"));
+					"[userid] = '" + p.created_userid + "'"));
 
 			// Instantiate a POST HTTP method
 			try {
@@ -222,8 +210,8 @@ public class ProjectInformationFragment extends Fragment implements Settings {
 				job = json.getJSONObject(0);
 				data_array = job.getJSONArray("data_array");
 				JSONObject dataJob = new JSONObject(data_array.getString(0));
-				created_username = dataJob.getString("username");
-				textViewCreatedBy.setText("Created By: " + created_username);
+				p.setCreated_userid(dataJob.getString("username"));
+				textViewCreatedBy.setText("Created By: " + p.getCreated_userid());
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
@@ -262,7 +250,7 @@ public class ProjectInformationFragment extends Fragment implements Settings {
 			postParameters.add(new BasicNameValuePair("tokenid", tokenid));
 			postParameters.add(new BasicNameValuePair("userid", userid));
 			postParameters.add(new BasicNameValuePair("condition",
-					"[userid] = '" + updated_userid + "'"));
+					"[userid] = '" + p.getUpdated_userid() + "'"));
 
 			// Instantiate a POST HTTP method
 			try {
@@ -283,8 +271,8 @@ public class ProjectInformationFragment extends Fragment implements Settings {
 				job = json.getJSONObject(0);
 				data_array = job.getJSONArray("data_array");
 				JSONObject dataJob = new JSONObject(data_array.getString(0));
-				updated_username = dataJob.getString("username");
-				textViewLastUpdatedBy.setText("Updated By: " + updated_username);;
+				p.setUpdated_userid(dataJob.getString("username"));
+				textViewLastUpdatedBy.setText("Updated By: " + p.getUpdated_userid());;
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}

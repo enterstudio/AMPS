@@ -20,7 +20,7 @@ public class ProjectActivity extends BaseActivity implements TabListener,
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_profile);
+		setContentView(R.layout.activity_project);
 		setTitle("Project");
 		settings = getSharedPreferences(SETTINGS, 0);
 
@@ -30,7 +30,7 @@ public class ProjectActivity extends BaseActivity implements TabListener,
 		}
 
 		try {
-			r = (RelativeLayout) findViewById(R.id.activity_profile);
+			r = (RelativeLayout) findViewById(R.id.activity_project);
 			fragmentTra = getFragmentManager().beginTransaction();
 			ActionBar bar = getActionBar();
 			bar.addTab(bar.newTab().setText("Information").setTabListener(this));

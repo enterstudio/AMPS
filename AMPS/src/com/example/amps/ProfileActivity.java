@@ -25,7 +25,7 @@ public class ProfileActivity extends BaseActivity implements TabListener,
 		settings = getSharedPreferences(SETTINGS, 0);
 
 		try {
-			r = (RelativeLayout) findViewById(R.id.activity_project);
+			r = (RelativeLayout) findViewById(R.id.activity_profile);
 			fragmentTra = getFragmentManager().beginTransaction();
 			ActionBar bar = getActionBar();
 			bar.addTab(bar.newTab().setText("Account").setTabListener(this));
