@@ -1,0 +1,111 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".WorkingAssetsRevisionsFragment" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/textViewRevision"
+                android:layout_width="0px"
+                android:layout_gravity="center_vertical|left"
+                android:layout_weight="0.2"
+                android:text="@string/revision" />
+
+            <TextView
+                android:id="@+id/textViewComment"
+                android:layout_width="0px"
+                android:layout_gravity="center_vertical|left"
+                android:layout_weight="0.2"
+                android:text="@string/comment" />
+
+            <TextView
+                android:id="@+id/textViewUser"
+                android:layout_width="0px"
+                android:layout_gravity="center_vertical|left"
+                android:layout_weight="0.2"
+                android:text="@string/user" />
+
+            <TextView
+                android:id="@+id/textViewDate"
+                android:layout_width="0px"
+                android:layout_gravity="center_vertical|left"
+                android:layout_weight="0.2"
+                android:text="@string/date" />
+
+            <TextView
+                android:id="@+id/textViewDownload"
+                android:layout_width="0px"
+                android:layout_gravity="center_vertical|left"
+                android:layout_weight="0.1" />
+
+            <TextView
+                android:id="@+id/textViewDelete"
+                android:layout_width="0px"
+                android:layout_gravity="center_vertical|left"
+                android:layout_weight="0.1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white" >
+
+            <TextView
+                android:id="@+id/textViewRevision1"
+                android:layout_width="0px"
+                android:layout_gravity="center_vertical|left"
+                android:layout_weight="0.2"
+                android:text="#1" />
+
+            <TextView
+                android:id="@+id/textViewComment1"
+                android:layout_width="0px"
+                android:layout_gravity="center_vertical|left"
+                android:layout_weight="0.2"
+                android:text="Comment" />
+
+            <TextView
+                android:id="@+id/textViewUser1"
+                android:layout_width="0px"
+                android:layout_gravity="center_vertical|left"
+                android:layout_weight="0.2"
+                android:text="Admin" />
+
+            <TextView
+                android:id="@+id/textViewDate1"
+                android:layout_width="0px"
+                android:layout_gravity="center_vertical|left"
+                android:layout_weight="0.2"
+                android:text="01/01/2013" />
+
+            <ImageButton
+                android:id="@+id/imageButtonDownload1"
+                android:layout_width="0px"
+                android:layout_gravity="center_vertical|left"
+                android:layout_weight="0.1"
+                android:background="@null"
+                android:src="@drawable/av_download" />
+
+            <ImageButton
+                android:id="@+id/imageButtonDelete1"
+                android:layout_width="0px"
+                android:layout_gravity="center_vertical|left"
+                android:layout_weight="0.1"
+                android:background="@null"
+                android:src="@drawable/content_remove" />
+        </TableRow>
+    </TableLayout>
+
+</ScrollView>

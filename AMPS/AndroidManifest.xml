@@ -69,6 +69,10 @@
             android:label="@string/title_fragment_project_charts" >
         </activity>
         <activity
+            android:name="com.example.amps.FolderActivity"
+            android:label="@string/title_activity_folder" >
+        </activity>
+        <activity
             android:name="com.example.amps.ReportActivity"
             android:label="@string/title_activity_report" >
         </activity>

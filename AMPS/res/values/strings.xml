@@ -101,6 +101,8 @@
         <item>Client D</item>
     </string-array>
 
+    
+    <string name="title_activity_folder">FolderActivity</string>
     <string name="title_fragment_search">SearchFragment</string>
     <string name="title_fragment_report">ReportFragment</string>
     <string name="title_activity_report">ReportActivity</string>
