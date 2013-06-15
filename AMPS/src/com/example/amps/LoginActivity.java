@@ -22,23 +22,25 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends BaseActivity implements Settings {
 	ProgressDialog dialog;
-	String szUsername = "Admin";
-	String szPassword = "Admin";
-	String error_code;
-	
+	String szUsername = "";
+	String szPassword = "";
+	int error_code;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		/*super.onCreateOptionsMenu(menu);*/
+		/* super.onCreateOptionsMenu(menu); */
 		return true;
 	}
 
@@ -61,8 +63,8 @@ public class LoginActivity extends BaseActivity implements Settings {
 
 		@Override
 		protected void onPreExecute() {
-			dialog = ProgressDialog.show(LoginActivity.this, "Authenticating user",
-					"Please wait...", true);
+			dialog = ProgressDialog.show(LoginActivity.this,
+					"Authenticating user", "Please wait...", true);
 		}
 
 		@Override
@@ -70,18 +72,19 @@ public class LoginActivity extends BaseActivity implements Settings {
 			return login();
 
 		}
-		
+
 		@Override
 		protected void onPostExecute(Object result) {
 			dialog.dismiss();
-			parseJSONResponse((String)result);
-			Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-			startActivity(intent);
+			parseJSONResponse((String) result);
 		}
 
-		
 		public String login() {
 			String responseBody = "";
+			szUsername = ((EditText) findViewById(R.id.editTextUsername))
+					.getText().toString();
+			szPassword = ((EditText) findViewById(R.id.editTextPassword))
+					.getText().toString();
 			// Instantiate an HttpClient
 			HttpClient httpclient = new DefaultHttpClient();
 			HttpPost httppost = new HttpPost(SZAAPIURL + "Authenticate");
@@ -96,8 +99,7 @@ public class LoginActivity extends BaseActivity implements Settings {
 			try {
 				httppost.setEntity(new UrlEncodedFormEntity(postParameters));
 				ResponseHandler<String> responseHandler = new BasicResponseHandler();
-				responseBody = httpclient.execute(httppost,
-						responseHandler);
+				responseBody = httpclient.execute(httppost, responseHandler);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -106,7 +108,8 @@ public class LoginActivity extends BaseActivity implements Settings {
 
 		public String hash(String plaintext) {
 			try {
-				MessageDigest md = java.security.MessageDigest.getInstance("MD5");
+				MessageDigest md = java.security.MessageDigest
+						.getInstance("MD5");
 				byte[] array = md.digest(plaintext.getBytes());
 				StringBuffer sb = new StringBuffer();
 				for (int i = 0; i < array.length; ++i) {
@@ -125,12 +128,22 @@ public class LoginActivity extends BaseActivity implements Settings {
 			try {
 				json = new JSONArray(responseBody);
 				JSONObject job = json.getJSONObject(0);
-				error_code = job.getString("error_code");
+				error_code = job.getInt("error_code");
 				SharedPreferences settings = getSharedPreferences(SETTINGS, 0);
 			    SharedPreferences.Editor editor = settings.edit();
 		        editor.putString("userid", job.getString("userid"));
 		        editor.putString("tokenid", job.getString("tokenid"));
 		        editor.commit();
+		        if (error_code == 0) {
+		        	Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+					startActivity(intent);
+		        }
+		        else {
+					Toast toast = Toast.makeText(
+							LoginActivity.this,
+							"Incorrect username or password", Toast.LENGTH_LONG);
+					toast.show();
+		        }
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}

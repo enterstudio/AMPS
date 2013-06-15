@@ -66,22 +66,13 @@ public class ProjectListActivity extends BaseActivity implements Settings,
 			TextView textViewName = new TextView(this);
 			textViewName.setText(p.getName());
 			textViewName.setGravity(Gravity.CENTER_VERTICAL);
-			TextView textViewStatus = new TextView(this);
-			textViewStatus.setText("status");
-			textViewStatus.setGravity(Gravity.CENTER_VERTICAL);
-			ImageButton imageButtonDetails = new ImageButton(this);
-			imageButtonDetails.setBackgroundColor(Color.TRANSPARENT); 
-			imageButtonDetails.setImageDrawable(getResources().getDrawable(R.drawable.action_about));
-			imageButtonDetails.setId(i);
-			imageButtonDetails.setOnClickListener(this);
+			textViewName.setPadding(16, 16, 16, 16);
+			textViewName.setId(i);
+			textViewName.setOnClickListener(this);
 			
 
 			tr.addView(textViewName, new TableRow.LayoutParams(0,
-					LayoutParams.WRAP_CONTENT, (float) 0.5));
-			tr.addView(textViewStatus, new TableRow.LayoutParams(0,
-					LayoutParams.WRAP_CONTENT, (float) 0.3));
-			tr.addView(imageButtonDetails, new TableRow.LayoutParams(0,
-					LayoutParams.WRAP_CONTENT, (float) 0.2));
+					LayoutParams.WRAP_CONTENT, (float) 1));
 			
 			tl.addView(tr, new TableLayout.LayoutParams(
 					LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));

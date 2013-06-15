@@ -326,7 +326,7 @@ public class FolderActivity extends BaseActivity implements Settings,
 			TextView textViewName = new TextView(this);
 			textViewName.setText("No files retrieved.");
 			textViewName.setGravity(Gravity.CENTER_VERTICAL);
-			
+			textViewName.setPadding(16, 16, 16, 16);
 			
 			tr.addView(textViewName, new TableRow.LayoutParams(0,
 					LayoutParams.WRAP_CONTENT, (float) 1.0));
@@ -337,8 +337,6 @@ public class FolderActivity extends BaseActivity implements Settings,
 		for (int i = 0; i < foldersArray.size(); i++) {
 			Folder f = foldersArray.get(i);
 			TableRow tr = new TableRow(this);
-			tr.setId(i);
-			tr.setOnClickListener(this);
 
 			if (i % 2 == 0)
 				tr.setBackgroundColor(Color.WHITE);
@@ -347,29 +345,14 @@ public class FolderActivity extends BaseActivity implements Settings,
 			TextView textViewName = new TextView(this);
 			textViewName.setText(f.getName());
 			textViewName.setGravity(Gravity.CENTER_VERTICAL);
-			/*TextView textViewStatus = new TextView(this);
-			textViewStatus.setText(f.getTracking_status());
-			textViewStatus.setGravity(Gravity.CENTER_VERTICAL);*/
+			textViewName.setPadding(16, 16, 16, 16);
+			textViewName.setId(i);
+			textViewName.setOnClickListener(this);
 			
-			ImageButton imageButtonPreview = new ImageButton(this);
-			imageButtonPreview.setBackgroundColor(Color.TRANSPARENT); 
-			imageButtonPreview.setImageDrawable(getResources().getDrawable(R.drawable.content_picture));
-			imageButtonPreview.setId(i + 100);
-			imageButtonPreview.setOnClickListener(this);
-			
-			ImageButton imageButtonDetails = new ImageButton(this);
-			imageButtonDetails.setBackgroundColor(Color.TRANSPARENT); 
-			imageButtonDetails.setImageDrawable(getResources().getDrawable(R.drawable.action_about));
-			imageButtonDetails.setId(i);
-			imageButtonDetails.setOnClickListener(this);
 			
 			
 			tr.addView(textViewName, new TableRow.LayoutParams(0,
-					LayoutParams.WRAP_CONTENT, (float) 0.8));
-			/*tr.addView(textViewStatus, new TableRow.LayoutParams(0,
-					LayoutParams.WRAP_CONTENT, (float) 0.3));*/
-			tr.addView(imageButtonDetails, new TableRow.LayoutParams(0,
-					LayoutParams.WRAP_CONTENT, (float) 0.2));
+					LayoutParams.WRAP_CONTENT, (float) 1));
 			tl.addView(tr, new TableLayout.LayoutParams(
 					LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		}
